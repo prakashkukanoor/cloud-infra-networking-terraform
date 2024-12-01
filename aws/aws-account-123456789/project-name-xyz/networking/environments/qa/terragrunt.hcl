@@ -1,6 +1,6 @@
 # Include the parent terragrunt.hcl to inherit the remote_state block
-include {
-  path = find_in_parent_folders()  # This will include the parent configuration
+include "root" {
+  path = find_in_parent_folders()
 }
 
 # Define specific values for this child configuration
