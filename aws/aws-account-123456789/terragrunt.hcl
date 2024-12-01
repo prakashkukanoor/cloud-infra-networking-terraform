@@ -1,6 +1,7 @@
 locals {
-  bucket_name         = "parent-specific-2-bucket"
-  dynamodb_table_name = "parent-dynamodb-2-table"
+  common_vars = read_terragrunt_config(find_in_parent_folders("common.hcl"))
+  bucket_name         = local.common_vars.locals.bucket_name
+  dynamodb_table_name = local.common_vars.locals.dynamodb_table_name
 }
 
 remote_state {
