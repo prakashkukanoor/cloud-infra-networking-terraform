@@ -19,9 +19,20 @@ inputs = {
   team                 = "devops"
   environment          = "PROD"
   vpc_cidr_ipv4 = "10.0.0.0/16"
-  availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
   enable_ipv6 = true
-  application_public_subnets = ["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]
-  # application_private_subnets = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-  # database_private_subnets = ["10.0.201.0/24", "10.0.202.0/24", "10.0.203.0/24"]
+  application_public_subnets = [
+    {"az": "us-east-1a", "ipv4_cidr": "10.0.0.0/24", "ipv6_index": 0},
+    {"az": "us-east-1b", "ipv4_cidr": "10.0.1.0/24", "ipv6_index": 1},
+    {"az": "us-east-1c", "ipv4_cidr": "10.0.2.0/24", "ipv6_index": 2}
+  ]
+  application_private_subnets = [
+    {"az": "us-east-1a", "ipv4_cidr": "10.0.101.0/24", "ipv6_index": 101},
+    {"az": "us-east-1b", "ipv4_cidr": "10.0.102.0/24", "ipv6_index": 102},
+    {"az": "us-east-1c", "ipv4_cidr": "10.0.103.0/24", "ipv6_index": 103}
+  ]
+  database_private_subnets = [
+    {"az": "us-east-1a", "ipv4_cidr": "10.0.201.0/24", "ipv6_index": 201},
+    {"az": "us-east-1b", "ipv4_cidr": "10.0.202.0/24", "ipv6_index": 202},
+    {"az": "us-east-1c", "ipv4_cidr": "10.0.203.0/24", "ipv6_index": 203}
+  ]
 }
