@@ -20,6 +20,7 @@ inputs = {
   environment          = "PROD"
   vpc_cidr_ipv4 = "10.0.0.0/16"
   enable_ipv6 = true
+  availability_zone = ["us-east-1a", "us-east-1b", "us-east-1c"]
   application_public_subnets = [
     {"az": "us-east-1a", "ipv4_cidr": "10.0.0.0/24", "ipv6_index": 0},
     {"az": "us-east-1b", "ipv4_cidr": "10.0.1.0/24", "ipv6_index": 1},
