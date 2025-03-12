@@ -11,7 +11,7 @@ locals {
 }
 
 terraform {
-  source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git"
+  source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git?ref=v1.0.1"
 }
 
 inputs = {
