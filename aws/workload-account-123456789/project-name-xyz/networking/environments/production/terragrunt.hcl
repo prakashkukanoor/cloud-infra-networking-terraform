@@ -11,7 +11,7 @@ locals {
 }
 
 terraform {
-  source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git?ref=v1.0.2"
+  source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git?ref=v1.0.3"
 }
 
 inputs = {
@@ -36,4 +36,8 @@ inputs = {
     {"ipv4_cidr": "10.0.202.0/24", "ipv6_index": 202},
     {"ipv4_cidr": "10.0.203.0/24", "ipv6_index": 203}
   ]
+  vpc_endpoints = {
+    s3        = true
+    dynamodb  = true
+  }
 }
