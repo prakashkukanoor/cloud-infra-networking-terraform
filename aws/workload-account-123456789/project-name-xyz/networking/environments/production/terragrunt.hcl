@@ -11,7 +11,8 @@ locals {
 }
 
 terraform {
-  source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git?ref=v1.0.4"
+  source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git"
+  # source = "git@github.com:prakashkukanoor/terraform-aws-vpc-subnets-routetable.git?ref=v1.0.4"
 }
 
 inputs = {
@@ -39,5 +40,8 @@ inputs = {
   vpc_gateway_endpoints = {
     s3        = true
     dynamodb  = true
+  }
+  vpc_interface_endpoints = {
+    events        = true
   }
 }
